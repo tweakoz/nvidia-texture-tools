@@ -1,24 +1,33 @@
 PROJECT(nvcore)
 
-SET(CORE_SRCS
+SET(CORE_HDRS
     nvcore.h
     Array.h
-    Debug.h Debug.cpp
     DefsGnucDarwin.h
     DefsGnucLinux.h
     DefsGnucWin32.h
     DefsVcWin32.h
-    FileSystem.h FileSystem.cpp
-    ForEach.h
-    Memory.h Memory.cpp
     Ptr.h
     RefCounted.h
-    StrLib.h StrLib.cpp
     Stream.h
     StdStream.h
-    TextWriter.h TextWriter.cpp
-    Timer.h Timer.cpp
+    Memory.h 
+    Debug.h 
+    FileSystem.h 
+    ForEach.h
+    StrLib.h 
+    TextWriter.h 
+    Timer.h 
     Utils.h)
+
+SET(CORE_SRCS ${CORE_HDRS}
+    Debug.cpp
+    FileSystem.cpp
+    Memory.cpp
+    StrLib.cpp
+    TextWriter.cpp
+    Timer.cpp
+    )
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -47,3 +56,4 @@ INSTALL(TARGETS nvcore
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib/static)
+INSTALL(FILES ${CORE_HDRS} DESTINATION include/nvcore )

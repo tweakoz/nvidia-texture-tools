@@ -1,20 +1,33 @@
 PROJECT(nvimage)
 
-SET(IMAGE_SRCS	
+SET(IMAGE_HDRS
     nvimage.h
-    BlockDXT.h BlockDXT.cpp
-    ColorBlock.h ColorBlock.cpp
-    DirectDrawSurface.h DirectDrawSurface.cpp
-    ErrorMetric.h ErrorMetric.cpp
-    Filter.h Filter.cpp
-    FloatImage.h FloatImage.cpp
-    Image.h Image.cpp
-    ImageIO.h ImageIO.cpp
-    #KtxFile.h KtxFile.cpp
-    NormalMap.h NormalMap.cpp
     PixelFormat.h
     PsdFile.h
-    TgaFile.h)
+BlockDXT.h 
+ColorBlock.h 
+DirectDrawSurface.h 
+ ErrorMetric.h 
+Filter.h 
+FloatImage.h 
+Image.h 
+ImageIO.h 
+NormalMap.h
+TgaFile.h
+ )
+
+SET(IMAGE_SRCS	${IMAGE_HDRS}
+    BlockDXT.cpp
+    ColorBlock.cpp
+    DirectDrawSurface.cpp
+    ErrorMetric.cpp
+    Filter.cpp
+    FloatImage.cpp
+    Image.cpp
+    ImageIO.cpp
+    #KtxFile.h KtxFile.cpp
+     NormalMap.cpp
+    )
 
 INCLUDE_DIRECTORIES(${CMAKE_CURRENT_SOURCE_DIR})
 
@@ -59,4 +72,6 @@ INSTALL(TARGETS nvimage
     RUNTIME DESTINATION bin
     LIBRARY DESTINATION lib
     ARCHIVE DESTINATION lib/static)
+
+INSTALL(FILES ${IMAGE_HDRS} DESTINATION include/nvimage )
 
