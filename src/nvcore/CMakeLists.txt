@@ -12,6 +12,7 @@ SET(CORE_HDRS
     Stream.h
     StdStream.h
     Memory.h 
+    Hash.h 
     Debug.h 
     FileSystem.h 
     ForEach.h
