@@ -1,7 +1,7 @@
 #ifndef NV_CONFIG
 #define NV_CONFIG
 
-#cmakedefine HAVE_UNISTD_H=1
+#cmakedefine HAVE_UNISTD_H = 1
 #cmakedefine HAVE_STDARG_H
 #cmakedefine HAVE_SIGNAL_H
 #cmakedefine HAVE_EXECINFO_H
