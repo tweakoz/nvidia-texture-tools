@@ -8,7 +8,7 @@
 #include "Win32.h"
 #elif NV_OS_UNIX
 #include <sys/types.h>
-#include <sys/sysctl.h>
+//#include <sys/sysctl.h> // deprecated header
 #include <unistd.h>
 #elif NV_OS_DARWIN
 #import <stdio.h>
